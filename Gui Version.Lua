@@ -52,7 +52,6 @@ Button2.TextColor3 = Color3.fromRGB(3, 252, 244)
 Button2.Text = "Inglês"
 
 Button1.MouseButton1Click:Connect(function()
-loadstring(game:HttpGet("https://pastebin.com/raw/GZswxyMS"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realgengar/Brookhaven/refs/heads/main/Source.lua"))()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/realgengar/Brookhaven/refs/heads/main/Source.lua'),true))()
 ScreenGui:Destroy()
@@ -63,3 +62,4 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/realgengar/Brookhaven
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/realgengar/Brookhaven/refs/heads/main/Source2.lua'),true))()
     ScreenGui:Destroy()
 end)
+loadstring(game:HttpGet("https://pastebin.com/raw/GZswxyMS"))()
