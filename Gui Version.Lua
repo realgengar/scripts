@@ -60,4 +60,8 @@ Button2.MouseButton1Click:Connect(function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/realgengar/Brookhaven/refs/heads/main/Source2.lua'),true))()
     ScreenGui:Destroy()
 end)
+wait(5)
+if ScreenGui then
+    ScreenGui:Destroy()
+end
 loadstring(game:HttpGet("https://pastebin.com/raw/GZswxyMS"))()
