@@ -1,0 +1,45 @@
+local function executeRequests()
+    -- Primeira chamada
+    local args1 = {
+        [1] = "blud trying to skid my script LOL",
+        [2] = "SKID",
+        [3] = "L",
+        [4] = "can't make roblox script? go learn lua dumbass",
+        [5] = "faz o L"
+    }
+    game:GetService("ReplicatedStorage").RE:FindFirstChild("1Ke1yFa1b"):InvokeServer(unpack(args1))
+
+    -- Segunda chamada
+    local args2 = {
+        [1] = "Skidder"
+    }
+    game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args2))
+
+    -- Terceira chamada
+    local args3 = {
+        [1] = "blud trying to skid my script LOL",
+        [2] = "SKID",
+        [3] = "L",
+        [4] = "can't make roblox script? go learn lua dumbass",
+        [5] = "faz o L"
+    }
+    game:GetService("ReplicatedStorage").RE:FindFirstChild("1Ke1yFa1b"):InvokeServer(unpack(args3))
+
+    -- Quarta chamada
+    local args4 = {
+        [1] = "Skidder"
+    }
+    game:GetService("ReplicatedStorage").RE:FindFirstChild("1Flyin1g"):FireServer(unpack(args4))
+
+    -- Quinta chamada
+    local args5 = {
+        [1] = "realgengar",
+        [2] = "skidder",
+        [3] = "Go Learn to Program Skid",
+        [4] = "Remote? hahahah"
+    }
+    game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args5))
+    executeRequests()
+end
+
+executeRequests()
