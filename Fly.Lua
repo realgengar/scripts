@@ -116,7 +116,7 @@ nowe = false
 
 game:GetService("StarterGui"):SetCore("SendNotification", { 
 	Title = "Fly Gui:";
-	Text = "Shadow";
+	Text = "Drip chitos";
 	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
 Duration = 5;
 
