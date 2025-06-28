@@ -1,7 +1,7 @@
 --[[
   Creator: realgengar
   https/github/realgengar
-  by:Rocks
+  by:Oden
 --]]
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
@@ -16,50 +16,62 @@ Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 Frame.BorderColor3 = Color3.new(1, 1, 1)
 Frame.BorderSizePixel = 2
-Frame.Size = UDim2.new(0, 300, 0, 200)
-Frame.Position = UDim2.new(0.5, -150, 0.5, -100)
+Frame.Size = UDim2.new(0, 350, 0, 250)
+Frame.Position = UDim2.new(0.5, -175, 0.5, -125)
 
 local UICorner = Instance.new("UICorner")
 UICorner.CornerRadius = UDim.new(0, 7)
 UICorner.Parent = Frame
 
+-- Criação da imagem do logo
+local LogoImage = Instance.new("ImageLabel")
+LogoImage.Parent = Frame
+LogoImage.Size = UDim2.new(0, 59, 0, 50)
+LogoImage.Position = UDim2.new(0.81, 0, 0, 10)
+LogoImage.BackgroundTransparency = 1
+LogoImage.Image = "rbxassetid://105554931740012" -- Substitua pelo ID da sua imagem ou URL
+
 local Title = Instance.new("TextLabel")
 Title.Parent = Frame
-Title.Size = UDim2.new(0, 300, 0, 50)
-Title.Position = UDim2.new(0.5, -150, 0, 10)
+Title.Size = UDim2.new(0, 250, 0, 60)
+Title.Position = UDim2.new(0.2, -50, 0, 10) -- Posição ajustada para acomodar a imagem
 Title.BackgroundTransparency = 1
-Title.Text = "Shadow Hub"
+Title.Text = "Client"
 Title.TextColor3 = Color3.new(1, 1, 1)
 Title.Font = Enum.Font.SourceSansBold
-Title.TextSize = 40
+Title.TextSize = 37
+Title.TextXAlignment = Enum.TextXAlignment.Left -- Alinha o texto à esquerda
 
 Button1.Parent = Frame
 Button1.BackgroundColor3 = Color3.new(0, 0, 0)
-Button1.BorderSizePixel = 2
-Button1.BorderColor3 = Color3.new(1, 1, 1)
-Button1.Size = UDim2.new(0, 280, 0, 40)
-Button1.Position = UDim2.new(0.5, -140, 0, 70)
+Button1.BorderSizePixel = 3
+Button1.BorderColor3 = Color3.fromRGB(252, 3, 223)
+Button1.Size = UDim2.new(0, 330, 0, 45)
+Button1.Position = UDim2.new(0.5, -165, 0, 80)
 Button1.TextColor3 = Color3.fromRGB(3, 252, 244)
-Button1.Text = "Português"
+Button1.Text = "português"
+Button1.TextSize = 23
 
 Button2.Parent = Frame
 Button2.BackgroundColor3 = Color3.new(0, 0, 0)
-Button2.BorderSizePixel = 2
-Button2.BorderColor3 = Color3.new(1, 1, 1)
-Button2.Size = UDim2.new(0, 280, 0, 40)
-Button2.Position = UDim2.new(0.5, -140, 0, 120)
+Button2.BorderSizePixel = 3
+Button2.BorderColor3 = Color3.fromRGB(252, 3, 223)
+Button2.Size = UDim2.new(0, 330, 0, 45)
+Button2.Position = UDim2.new(0.5, -165, 0, 140)
 Button2.TextColor3 = Color3.fromRGB(3, 252, 244)
-Button2.Text = "Inglês"
+Button2.Text = "english"
+Button2.TextSize = 23
 
 Button1.MouseButton1Click:Connect(function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/realgengar/Brookhaven/refs/heads/main/Source.lua'),true))()
-ScreenGui:Destroy()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/realgengar/Brookhaven/refs/heads/main/Source.lua'),true))()
+    ScreenGui:Destroy()
 end)
 
 Button2.MouseButton1Click:Connect(function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/realgengar/Brookhaven/refs/heads/main/Source2.lua'),true))()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/realgengar/Brookhaven/refs/heads/main/Source2.lua'),true))()
     ScreenGui:Destroy()
 end)
+
 wait(5)
 if ScreenGui then
     ScreenGui:Destroy()
