@@ -1,7 +1,7 @@
 --[[
-  Creator: realgengar
+  Creator: kyoshi
   https/github/realgengar
-  by:Oden
+  by:kyoshi
 --]]
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
@@ -23,24 +23,34 @@ local UICorner = Instance.new("UICorner")
 UICorner.CornerRadius = UDim.new(0, 7)
 UICorner.Parent = Frame
 
--- Criação da imagem do logo
 local LogoImage = Instance.new("ImageLabel")
 LogoImage.Parent = Frame
 LogoImage.Size = UDim2.new(0, 59, 0, 50)
 LogoImage.Position = UDim2.new(0.81, 0, 0, 10)
 LogoImage.BackgroundTransparency = 1
-LogoImage.Image = "rbxassetid://105554931740012" -- Substitua pelo ID da sua imagem ou URL
+LogoImage.Image = "rbxassetid://72495850369898"
 
 local Title = Instance.new("TextLabel")
 Title.Parent = Frame
 Title.Size = UDim2.new(0, 250, 0, 60)
-Title.Position = UDim2.new(0.2, -50, 0, 10) -- Posição ajustada para acomodar a imagem
+Title.Position = UDim2.new(0.2, -50, 0, 9)
 Title.BackgroundTransparency = 1
-Title.Text = "Client"
+Title.Text = "CLIENT"
 Title.TextColor3 = Color3.new(1, 1, 1)
 Title.Font = Enum.Font.SourceSansBold
 Title.TextSize = 37
-Title.TextXAlignment = Enum.TextXAlignment.Left -- Alinha o texto à esquerda
+Title.TextXAlignment = Enum.TextXAlignment.Left
+
+local Title2 = Instance.new("TextLabel")
+Title2.Parent = Frame
+Title2.Size = UDim2.new(0, 250, 0, 60)
+Title2.Position = UDim2.new(0.2, -50, 0, 180)
+Title2.BackgroundTransparency = 1
+Title2.Text = "working in both versions"
+Title2.TextColor3 = Color3.new(1, 1, 1)
+Title2.Font = Enum.Font.BuilderSansBold
+Title2.TextSize = 20
+Title2.TextXAlignment = Enum.TextXAlignment.Left
 
 Button1.Parent = Frame
 Button1.BackgroundColor3 = Color3.new(0, 0, 0)
@@ -76,4 +86,4 @@ wait(5)
 if ScreenGui then
     ScreenGui:Destroy()
 end
-loadstring(game:HttpGet("https://pastebin.com/raw/GZswxyMS"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/ngXWsMTu"))()
