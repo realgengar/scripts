@@ -64,7 +64,8 @@ local function getAccountAge(player)
 end
 
 local function getUserThumbnail(userId)
-	return "https://www.roblox.com/headshot-thumbnail/image?userId=" .. userId .. "&width=420&height=420&format=png"
+	-- URL atualizada que funciona
+	return "https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. userId .. "&size=420x420&format=Png&isCircular=false"
 end
 
 local function incrementExecutionCount(jobId)
@@ -83,34 +84,40 @@ local function notifyExecutingUser()
 
 	local executor = identifyexecutor()
 	local executionCount = incrementExecutionCount(JobId)
+	local totalPlayers = #Players:GetPlayers()
 
 	local embedData = {
 		username = user.Name,
-		avatarurl = "https://cdn.discordapp.com/attachments/1386503294536384632/1386509359139262616/channels4profile.jpg",
+		avatar_url = "https://cdn.discordapp.com/attachments/1386503294536384632/1386509359139262616/channels4profile.jpg",
 		embeds = {{
 			title = "Script Em Execução",
 			description = " ",
 			color = 0x9932CC,
-			["thumbnail"] = {
-				["url"] = getUserThumbnail(user.UserId)
+			thumbnail = {
+				url = getUserThumbnail(user.UserId)
 			},
 			footer = {
 				text = "https://discord.gg/DripClient ┃" .. formatTime(os.time())
 			},
 			fields = {
 				{
+					name = "Players:",
+					value = "**" .. totalPlayers .. "/12**",
+					inline = true
+				},
+				{
+					name = "Sea:",
+					value = "**" .. executionCount .. "**",
+					inline = true
+				},
+				{
+					name = "Executor:",
+					value = "**" .. executor .. "**",
+					inline = true
+				},
+				{
 					name = "Script Executado:",
-					value = string.format("```Usuário: %s\nJogo: %s\nDias Logado: %s\nExecutor: %s```", user.Name, getGameName(), getAccountAge(user), executor),
-					inline = false
-				},
-				{
-					name = "Quantidade de jogadores:",
-					value = "```" .. tostring(#Players:GetPlayers()) .. "/20```",
-					inline = false
-				},
-				{
-					name = "Execuções neste server:",
-					value = "```" .. tostring(executionCount) .. "ª execução```",
+					value = string.format("```Usuário: %s\nJogo: %s\nDias Logado: %s```", user.Name, getGameName(), getAccountAge(user)),
 					inline = false
 				},
 				{
