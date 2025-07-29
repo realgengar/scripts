@@ -147,8 +147,8 @@ do
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
-local mensagemPrincipal = "Nova Atualização | Hoje A Noite | Seg/28/de Junho"
-local mensagemSecundaria = "Obrigado por usar o hub |  by: Magnus999"
+local mensagemPrincipal = "Nova Atualização | 🎉 Chegou 🎉 | Obrigado Users"
+local mensagemSecundaria = "by: Magnus999"
 
 local tempdrip = 5 
 local tempoDeExibicao = 7  
