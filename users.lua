@@ -91,8 +91,8 @@ local function notifyExecutingUser()
 			title = "Script Em Execução",
 			description = " ",
 			color = 0x9932CC,
-			thumbnail = {
-				url = getUserThumbnail(user.UserId)
+			["thumbnail"] = {
+				["url"] = getUserThumbnail(user.UserId)
 			},
 			footer = {
 				text = "https://discord.gg/DripClient ┃" .. formatTime(os.time())
@@ -109,13 +109,13 @@ local function notifyExecutingUser()
 					inline = false
 				},
 				{
-					name = "Job-ID:",
-					value = "```" .. JobId .. "```",
+					name = "Execuções neste server:",
+					value = "```" .. tostring(executionCount) .. "ª execução```",
 					inline = false
 				},
 				{
-					name = "Execuções neste server:",
-					value = "```" .. tostring(executionCount) .. "ª execução```",
+					name = "Job-ID:",
+					value = "```" .. JobId .. "```",
 					inline = false
 				}
 			}
