@@ -34,6 +34,8 @@ local function sendWebhookNotification(data)
 		end)
 		if not success then
 			warn("Erro ao enviar webhook:", result)
+		else
+			print("Webhook enviado com sucesso!")
 		end
 	else
 		warn("Nenhuma função HTTP disponível.")
@@ -56,16 +58,22 @@ local function getGameName()
 	local success, info = pcall(function()
 		return MarketplaceService:GetProductInfo(game.PlaceId)
 	end)
-	return (success and info.Name) or "Jogo Desconhecido"
+	return (success and info and info.Name) or "Jogo Desconhecido"
 end
 
 local function getAccountAge(player)
 	return tostring(player.AccountAge) .. " Dias"
 end
 
-local function getUserThumbnail(userId)
-	-- URL atualizada que funciona
-	return "https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. userId .. "&size=420x420&format=Png&isCircular=false"
+-- Função para obter executor de forma mais robusta
+local function getExecutorName()
+	if identifyexecutor then
+		local success, executor = pcall(identifyexecutor)
+		if success and executor then
+			return executor
+		end
+	end
+	return "Desconhecido"
 end
 
 local function incrementExecutionCount(jobId)
@@ -80,9 +88,12 @@ local function notifyExecutingUser()
 	if notificationSent then return end
 
 	local user = Players.LocalPlayer
-	if not user then return end
+	if not user then 
+		warn("LocalPlayer não encontrado")
+		return 
+	end
 
-	local executor = identifyexecutor()
+	local executor = getExecutorName()
 	local executionCount = incrementExecutionCount(JobId)
 	local totalPlayers = #Players:GetPlayers()
 
@@ -97,21 +108,28 @@ local function notifyExecutingUser()
 				url = nil
 			},
 			footer = {
-				text = "discord.gg/drip-client ┃" .. formatTime(os.time())
+				text = "discord.gg/drip-client ┃ " .. formatTime(os.time())
 			},
 			fields = {
 				{
-					name = "Script Executado :",
-					value = string.format("```Usuário: %s\nJogo: %s\nDias Logado: %s```", user.Name, getGameName(), getAccountAge(user)),
-					inline = false
-				},
-			{
-					name = "Server :",
-					value = string.format("> Players: **%d/12**%s**\n> Executor: **%s**", totalPlayers, executor),
+					name = "Script Executado:",
+					value = string.format("```Usuário: %s\nJogo: %s\nDias Logado: %s```", 
+						user.Name, 
+						getGameName(), 
+						getAccountAge(user)
+					),
 					inline = false
 				},
 				{
-					name = "Job-Id :",
+					name = "Server:",
+					value = string.format("> Players: **%d/12**\n> Executor: **%s**", 
+						totalPlayers, 
+						executor
+					),
+					inline = false
+				},
+				{
+					name = "Job-Id:",
 					value = "```" .. JobId .. "```",
 					inline = false
 				}
@@ -119,16 +137,39 @@ local function notifyExecutingUser()
 		}}
 	}
 
+	print("Tentando enviar webhook...")
 	sendWebhookNotification(embedData)
 	notificationSent = true
 end
 
-if Players.LocalPlayer then
-	notifyExecutingUser()
+-- Aguardar o LocalPlayer estar disponível
+local function waitForLocalPlayer()
+	local player = Players.LocalPlayer
+	if player then
+		notifyExecutingUser()
+		return
+	end
+	
+	-- Aguardar LocalPlayer aparecer
+	local connection
+	connection = Players.PlayerAdded:Connect(function(plr)
+		if plr == Players.LocalPlayer then
+			connection:Disconnect()
+			notifyExecutingUser()
+		end
+	end)
+	
+	-- Timeout de segurança
+	spawn(function()
+		wait(10) -- Aguarda até 10 segundos
+		if connection then
+			connection:Disconnect()
+		end
+		if Players.LocalPlayer then
+			notifyExecutingUser()
+		end
+	end)
 end
 
-Players.PlayerAdded:Connect(function()
-	if Players.LocalPlayer then
-		notifyExecutingUser()
-	end
-end)
+-- Iniciar o script
+waitForLocalPlayer()
