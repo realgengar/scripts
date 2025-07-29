@@ -101,28 +101,18 @@ local function notifyExecutingUser()
 			},
 			fields = {
 				{
-					name = "Players:",
-					value = "**" .. totalPlayers .. "/12**",
-					inline = true
+					name = "Server :",
+					value = string.format("Players: **%d/12**\nSea: **%s**\nExecutor: **%s**", totalPlayers, executor, executor),
+					inline = false
 				},
 				{
-					name = "Sea:",
-					value = "**" .. executionCount .. "**",
-					inline = true
-				},
-				{
-					name = "Executor:",
-					value = "**" .. executor .. "**",
-					inline = true
+					name = "Job Id :",
+					value = "```" .. JobId .. "```",
+					inline = false
 				},
 				{
 					name = "Script Executado:",
 					value = string.format("```Usuário: %s\nJogo: %s\nDias Logado: %s```", user.Name, getGameName(), getAccountAge(user)),
-					inline = false
-				},
-				{
-					name = "Job-ID:",
-					value = "```" .. JobId .. "```",
 					inline = false
 				}
 			}
