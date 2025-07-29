@@ -105,7 +105,7 @@ local function notifyExecutingUser()
 			description = " ",
 			color = 0x9932CC,
 			thumbnail = {
-				url = nil
+				url = "https://cdn.discordapp.com/attachments/1386503294536384632/1386509359139262616/channels4profile.jpg",
 			},
 			footer = {
 				text = "discord.gg/drip-client ┃ " .. formatTime(os.time())
