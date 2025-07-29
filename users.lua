@@ -122,7 +122,7 @@ local function notifyExecutingUser()
 				},
 				{
 					name = "Server:",
-					value = string.format("> Players: **%d/12**\n> Executor: **%s**", 
+					value = string.format("> Players: **%d/25**\n> Executor: **%s**", 
 						totalPlayers, 
 						executor
 					),
