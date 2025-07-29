@@ -86,7 +86,7 @@ local function notifyExecutingUser()
 
 	local embedData = {
 		username = user.Name,
-		avatar_url = getUserThumbnail(user.UserId),
+		avatarurl = "https://cdn.discordapp.com/attachments/1386503294536384632/1386509359139262616/channels4profile.jpg",
 		embeds = {{
 			title = "Script Em Execução",
 			description = " ",
@@ -100,22 +100,22 @@ local function notifyExecutingUser()
 			fields = {
 				{
 					name = "Script Executado:",
-					value = string.format("Usuário: %s\nJogo: %s\nDias Logado: %s\nExecutor: %s", user.Name, getGameName(), getAccountAge(user), executor),
+					value = string.format("```Usuário: %s\nJogo: %s\nDias Logado: %s\nExecutor: %s```", user.Name, getGameName(), getAccountAge(user), executor),
 					inline = false
 				},
 				{
 					name = "Quantidade de jogadores:",
-					value = "" .. tostring(#Players:GetPlayers()) .. "/20",
+					value = "```" .. tostring(#Players:GetPlayers()) .. "/20```",
 					inline = false
 				},
 				{
 					name = "Job-ID:",
-					value = "" .. JobId .. "",
+					value = "```" .. JobId .. "```",
 					inline = false
 				},
 				{
 					name = "Execuções neste server:",
-					value = "" .. tostring(executionCount) .. "ª execução",
+					value = "```" .. tostring(executionCount) .. "ª execução```",
 					inline = false
 				}
 			}
