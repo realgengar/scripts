@@ -87,32 +87,32 @@ local function notifyExecutingUser()
 	local totalPlayers = #Players:GetPlayers()
 
 	local embedData = {
-		username = user.Name,
+		username = "Notify Users",
 		avatar_url = "https://cdn.discordapp.com/attachments/1386503294536384632/1386509359139262616/channels4profile.jpg",
 		embeds = {{
 			title = "Script Em Execução",
 			description = " ",
 			color = 0x9932CC,
 			thumbnail = {
-				url = getUserThumbnail(user.UserId)
+				url = nil
 			},
 			footer = {
-				text = "https://discord.gg/DripClient ┃" .. formatTime(os.time())
+				text = "discord.gg/drip-client ┃" .. formatTime(os.time())
 			},
 			fields = {
 				{
-					name = "Server :",
-					value = string.format("Players: **%d/12**\nSea: **%s**\nExecutor: **%s**", totalPlayers, executor, executor),
-					inline = false
-				},
-				{
-					name = "Job Id :",
-					value = "```" .. JobId .. "```",
-					inline = false
-				},
-				{
-					name = "Script Executado:",
+					name = "Script Executado :",
 					value = string.format("```Usuário: %s\nJogo: %s\nDias Logado: %s```", user.Name, getGameName(), getAccountAge(user)),
+					inline = false
+				},
+			{
+					name = "Server :",
+					value = string.format("> Players: **%d/12**%s**\n> Executor: **%s**", totalPlayers, executor),
+					inline = false
+				},
+				{
+					name = "Job-Id :",
+					value = "```" .. JobId .. "```",
 					inline = false
 				}
 			}
