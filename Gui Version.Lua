@@ -141,7 +141,7 @@ task.delay(5, function()
 end)
 wait(0.1)
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/realgengar/scripts/refs/heads/main/users.lua'),true))()
-wait(0.2)
+--[[wait(0.2)
 do
 --vavavaa
 local Players = game:GetService("Players")
@@ -208,4 +208,4 @@ local function dripguinotify()
 end
 
 task.delay(tempdrip, dripguinotify)
-end
+end]]
