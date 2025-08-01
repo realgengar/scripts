@@ -1,5 +1,3 @@
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/realgengar/scripts/refs/heads/main/Adm'),true))()
-wait(0.002)
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RE = ReplicatedStorage:WaitForChild("RE")
 
