@@ -39,7 +39,7 @@ local function executeRequests()
         pcall(function()
             remote2:FireServer(unpack(messages3))
         end)
-        wait(0.1)
+        wait(0.3)
     end
 end
 
