@@ -12,7 +12,7 @@ TextLabel.BorderSizePixel = 0
 TextLabel.Position = UDim2.new(0.426138082, 0, -0.072062656, 0)
 TextLabel.Size = UDim2.new(0, 200, 0, 50)
 TextLabel.Font = Enum.Font.FredokaOne
-TextLabel.Text = "New Update / Functions | Anti"
+TextLabel.Text = "Acessos Hoje | 20:00 | News Functions"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 19.000
 
